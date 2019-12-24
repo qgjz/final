@@ -1,0 +1,50 @@
+<link rel="stylesheet" type="text/css" href="/stylesheets/article.css">
+<ul class="nav nav-tabs bg-light">
+    <li class="nav-item">
+        <a class="nav-link" style="color:black" href="javascript:;" id="nav_main" onclick="toHome('{{user}}','{{isadmin}}')">首页</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link active" style="color:black" href="javascript:;" id="nav_blog">博客内容</a>
+    </li>
+    {{#if isadmin}}
+    <li class="nav-item">
+        <a class="nav-link" style="color:black" href="javascript:;" id="nav_add" onclick="toAdd('{{user}}','{{isadmin}}')">添加文章</a>
+    </li>
+    {{/if}}
+</ul>
+
+<h4 style="padding-top: 20px;">文章列表</h4>
+<div>
+    <ul class="list-group" id="list">
+    </ul>
+    {{#each result}}
+    {{#with this}}
+    <div class="modal fade" id="myModal{{id}}" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">{{title}}</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                </div>
+
+                <div class="modal-body">
+                    <p>{{content}}</p>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default btn-primary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <li class="list-group-item" style="margin-top: 10px;"><a type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal{{id}}" style="background-color: #fff;width: 100%;border-width: 0px;text-align: left;">{{title}}</a></li>        
+    {{/with}}
+    {{/each}}
+
+    <ul class="pagination">
+        {{#each pages}}
+        <li><a class="btna" href="#" onclick="toBlog('{{../user}}','{{../isadmin}}','{{this}}')">{{this}}</a></li>
+        {{/each}}
+    </ul>
+</div>

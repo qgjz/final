@@ -1,0 +1,37 @@
+<link rel="stylesheet" type="text/css" href="/stylesheets/login.css">
+<nav class="navbar navbar-expand-md" id="mainNav">
+    <a class="navbar-brand" href="#" id="english">Blog</a>
+    <a class="navbar-brand" href="#" id="chinese">博客管理系统</a>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <button type="button" id="exit" class="btn btn btn-primary btn-block mt-3" onclick="quit()">退出</button>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<br>
+<div class="container-fluid px-5">
+    <div id="content">
+        <ul class="nav nav-tabs bg-light">
+            <li class="nav-item">
+                <a class="nav-link active" style="color:black" href="javascript:;" id="nav_main">首页</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" style="color:black" href="javascript:;" id="nav_blog" onclick="toBlog('{{user}}','{{isadmin}}',1)">博客内容</a>
+            </li>
+
+            {{#if isadmin}}
+            <li class="nav-item">
+                <a class="nav-link" style="color:black" href="javascript:;" id="nav_add" onclick="toAdd('{{user}}','{{isadmin}}')">添加文章</a>
+            </li>
+            {{/if}}
+        </ul>
+    
+        <h3 style="margin-top: 20px;">Welcome , {{user}}</h3>
+    </div>
+</div>
+
+<script src="https://cdn.staticfile.org/twitter-bootstrap/4.1.0/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/javascripts/main.js"></script>

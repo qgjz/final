@@ -1,0 +1,25 @@
+.form-group{
+	padding: 10px 0 5px 0;
+}
+.footer{
+	padding-top: 200px;
+}
+#mainNav{
+	background-color: #f5f5f5;
+}
+#welcome{
+    margin-top: 100px;
+}
+#hint{
+    margin-left: 20px;
+}
+#english{
+    font-size: 48px;
+	color: #000000;
+}
+#chinese{
+	color: #000000;
+}
+#tt{
+	text-align: center;
+}

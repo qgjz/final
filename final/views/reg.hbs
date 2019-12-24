@@ -1,0 +1,57 @@
+<link rel="stylesheet" type="text/css" href="/stylesheets/login.css">
+<link rel="stylesheet" type="text/css" href="/stylesheets/reg.css">
+<nav class="navbar navbar-expand-md" id="mainNav">
+    <a class="navbar-brand" href="#" id="english">Blog</a>
+    <a class="navbar-brand" href="#" id="chinese">博客管理系统</a>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <button type="button" id="reg" class="btn btn btn-primary btn-block mt-3" onclick="mov()">登录</button>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container" id="ctn">
+    <div class="row mt-5">
+        <div class="col-7">
+            <h2 id="welcome">
+                欢迎使用博客管理系统!
+            </h2>
+            <h3 id="hint">
+                使用前请先登录或注册
+            </h3>
+        </div>
+        <form class="col-4" id="myform">
+            <div class="form-group"></div>
+            <h4 id="tt">注册</h4>
+            <div class="form-group">
+                <input class="form-control" name="email" type="text" id="email" placeholder="邮箱/账号">
+            </div>
+
+            <div class="form-group">
+                <input class="form-control" name="code" type="password" id="code" placeholder="验证码">
+                <button type="button" class="btn btn-primary" id="send_captcha" onclick="mail()">发送</button>
+            </div>
+
+            <div class="form-group">
+                <input class="form-control" name="pwd" type="password" id="pwd" placeholder="密码">
+            </div>
+
+            <div class="form-group">
+                <input class="form-control" name="pwd_again" type="password" id="pwd_again" placeholder="确认密码">
+            </div>
+            <div>
+                <button type="button" class="btn btn btn-primary btn-block mt-3" id="regis" onclick="regi()">注册</button>
+            </div>
+            <div class="form-group"></div>
+        </form>
+    </div>
+</div>
+
+<div class="footer text-center">
+    <p>copyright HZNU©all right reserved</p>
+</div>
+
+<script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="/javascripts/regi.js"></script>
